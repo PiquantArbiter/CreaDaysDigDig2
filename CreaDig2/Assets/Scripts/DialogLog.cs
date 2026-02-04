@@ -22,7 +22,6 @@ public class DialogLog : MonoBehaviour
     string[] coloeurs = { "pink", "red", "orange", "yellow", "green", "blue", "purple" };
     public Color[] coeulors = { new Color(0.929f, 0.431f, 0.522f,1f), Color.red, new Color(0.949f, 0.569f, 0.129f,1f), Color.yellow, Color.green, Color.blue, Color.magenta };
 
-    GameObject darling;
     GameObject darlingEmo;
 
     public Transform leftpos;
@@ -122,13 +121,12 @@ public class DialogLog : MonoBehaviour
                 n.color = coeulors[Array.IndexOf(coloeurs, c)];
             }
         }
-        Destroy(darling);
         Destroy(darlingEmo);
         if(diaRray[plaInDia].sprite == "Bal")
         {
             if (diaRray[plaInDia].leftSide)
             {
-                darling = Instantiate(Ballerina, leftpos);
+                
                 if(diaRray[plaInDia].emot == "neutral")
                 {
                     darlingEmo = Instantiate(BalNeu, leftpos);
@@ -147,50 +145,185 @@ public class DialogLog : MonoBehaviour
             }
             else
             {
-                darling = Instantiate(Ballerina, rightpos);
+                if (diaRray[plaInDia].emot == "neutral")
+                {
+                    darlingEmo = Instantiate(BalNeu, rightpos);
+                }
+                else if (diaRray[plaInDia].emot == "happy")
+                {
+                    darlingEmo = Instantiate(BalHap, rightpos);
+                }
+                else if (diaRray[plaInDia].emot == "sad")
+                {
+                    darlingEmo = Instantiate(BalSad, rightpos);
+                }
+                else if (diaRray[plaInDia].emot == "angry")
+                {
+                    darlingEmo = Instantiate(BalAng, rightpos);
+                }
             }
         } else if (diaRray[plaInDia].sprite == "Mac")
         {
             if (diaRray[plaInDia].leftSide)
             {
-                darling = Instantiate(mac, leftpos);
+                if (diaRray[plaInDia].emot == "neutral")
+                {
+                    darlingEmo = Instantiate(MacNeu, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "happy")
+                {
+                    darlingEmo = Instantiate(MacHap, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "sad")
+                {
+                    darlingEmo = Instantiate(MacSad, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "angry")
+                {
+                    darlingEmo = Instantiate(MacAng, leftpos);
+                }
             }
             else
             {
-                darling = Instantiate(mac, rightpos);
+                if (diaRray[plaInDia].emot == "neutral")
+                {
+                    darlingEmo = Instantiate(MacNeu, rightpos);
+                }
+                else if (diaRray[plaInDia].emot == "happy")
+                {
+                    darlingEmo = Instantiate(MacHap, rightpos);
+                }
+                else if (diaRray[plaInDia].emot == "sad")
+                {
+                    darlingEmo = Instantiate(MacSad, rightpos);
+                }
+                else if (diaRray[plaInDia].emot == "angry")
+                {
+                    darlingEmo = Instantiate(MacAng, rightpos);
+                }
             }
         }
         else if (diaRray[plaInDia].sprite == "One")
         {
             if (diaRray[plaInDia].leftSide)
             {
-                darling = Instantiate(conOne, leftpos);
+                if (diaRray[plaInDia].emot == "neutral")
+                {
+                    darlingEmo = Instantiate(OneNeu, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "happy")
+                {
+                    darlingEmo = Instantiate(OneHap, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "sad")
+                {
+                    darlingEmo = Instantiate(OneSad, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "angry")
+                {
+                    darlingEmo = Instantiate(OneAng, leftpos);
+                }
             }
             else
             {
-                darling = Instantiate(conOne, rightpos);
+                if (diaRray[plaInDia].emot == "neutral")
+                {
+                    darlingEmo = Instantiate(OneNeu, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "happy")
+                {
+                    darlingEmo = Instantiate(OneHap, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "sad")
+                {
+                    darlingEmo = Instantiate(OneSad, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "angry")
+                {
+                    darlingEmo = Instantiate(OneAng, leftpos);
+                }
             }
         }
         else if (diaRray[plaInDia].sprite == "Two")
         {
             if (diaRray[plaInDia].leftSide)
             {
-                darling = Instantiate(conTwo, leftpos);
+                if (diaRray[plaInDia].emot == "neutral")
+                {
+                    darlingEmo = Instantiate(BalNeu, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "happy")
+                {
+                    darlingEmo = Instantiate(BalHap, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "sad")
+                {
+                    darlingEmo = Instantiate(BalSad, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "angry")
+                {
+                    darlingEmo = Instantiate(BalAng, leftpos);
+                }
             }
             else
             {
-                darling = Instantiate(conTwo, rightpos);
+                if (diaRray[plaInDia].emot == "neutral")
+                {
+                    darlingEmo = Instantiate(BalNeu, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "happy")
+                {
+                    darlingEmo = Instantiate(BalHap, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "sad")
+                {
+                    darlingEmo = Instantiate(BalSad, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "angry")
+                {
+                    darlingEmo = Instantiate(BalAng, leftpos);
+                }
             }
         }
         else if (diaRray[plaInDia].sprite == "Thr")
         {
             if (diaRray[plaInDia].leftSide)
             {
-                darling = Instantiate(conThree, leftpos);
+                if (diaRray[plaInDia].emot == "neutral")
+                {
+                    darlingEmo = Instantiate(BalNeu, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "happy")
+                {
+                    darlingEmo = Instantiate(BalHap, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "sad")
+                {
+                    darlingEmo = Instantiate(BalSad, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "angry")
+                {
+                    darlingEmo = Instantiate(BalAng, leftpos);
+                }
             }
             else
             {
-                darling = Instantiate(conThree, rightpos);
+                if (diaRray[plaInDia].emot == "neutral")
+                {
+                    darlingEmo = Instantiate(BalNeu, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "happy")
+                {
+                    darlingEmo = Instantiate(BalHap, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "sad")
+                {
+                    darlingEmo = Instantiate(BalSad, leftpos);
+                }
+                else if (diaRray[plaInDia].emot == "angry")
+                {
+                    darlingEmo = Instantiate(BalAng, leftpos);
+                }
             }
         }
         

@@ -15,11 +15,12 @@ public class Rhthm : MonoBehaviour
 
     public Vector3 goal;
 
-    public bool moveleft;
-    public bool moveright;
+    public bool lefth;
+    public bool righth;
 
     public GameObject basnote;
     public GameObject hanote;
+    public GameObject fanote;
 
     public Transform left;
     public Transform halfLeft;
@@ -53,10 +54,14 @@ public class Rhthm : MonoBehaviour
             if(pos == 1)
             {
                 Instantiate(trail, halfRight);
+                righth = true;
+                StartCoroutine(dec(righth));
             }
             else
             {
                 Instantiate(trail, halfLeft);
+                lefth = true;
+                StartCoroutine(dec(lefth));
             }
             
             pos--;
@@ -66,10 +71,14 @@ public class Rhthm : MonoBehaviour
             if (pos == -1)
             {
                 Instantiate(trail, halfLeft);
+                lefth = true;
+                StartCoroutine(dec(lefth));
             }
             else
             {
                 Instantiate(trail, halfRight);
+                righth = true;
+                StartCoroutine(dec(righth));
             }
             pos++;
         }
@@ -104,11 +113,21 @@ public class Rhthm : MonoBehaviour
         }
         else if (n == "ml")
         {
-            Instantiate(hanote, halfLeft);
+            GameObject q = Instantiate(hanote, halfLeft);
+            q.GetComponent<halfNot>().leftq = true;
         }
         else if (n == "mr")
         {
-            Instantiate(hanote, halfRight);
+            GameObject q = Instantiate(hanote, halfRight);
+            q.GetComponent<halfNot>().leftq = false;
+        }
+        else if (n == "laft")
+        {
+            Instantiate(fanote, left);
+        }
+        else if (n == "raght")
+        {
+            Instantiate(fanote, rigt);
         }
         notPos++;
         
@@ -124,5 +143,11 @@ public class Rhthm : MonoBehaviour
     {
         points++;
         poiText.text = "Points:" + points;
+    }
+
+    public IEnumerator dec(bool b)
+    {
+        yield return new WaitForSeconds(1);
+        b = false;
     }
 }

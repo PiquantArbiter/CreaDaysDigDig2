@@ -11,14 +11,12 @@ public class trailDecay : MonoBehaviour
     }
     private void Update()
     {
-        Vector3 scale = transform.localScale;
-        scale.x = Mathf.Lerp(1, 0, Time.deltaTime);
-        transform.localScale = scale;
+        
     }
 
     public IEnumerator decay()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
     }
 }

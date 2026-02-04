@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class norNot : MonoBehaviour
+public class fastNot : MonoBehaviour
 {
     public int bpm;
     public GameObject player;
@@ -17,25 +17,25 @@ public class norNot : MonoBehaviour
     }
     public void Update()
     {
-        if(transform.position.y == -3.5f)
+        if (transform.position.y == -3.5f)
         {
-            if(player.transform.position.x == transform.position.x)
+            if (player.transform.position.x == transform.position.x)
             {
                 cont.GetComponent<Rhthm>().point();
                 Destroy(gameObject);
             }
-            
+
         }
     }
     public IEnumerator beatDes()
     {
-        yield return new WaitForSeconds(11f*bpm/60);
+        yield return new WaitForSeconds(11f * bpm / 60);
         Destroy(gameObject);
     }
 
     public IEnumerator beatMove()
     {
-        yield return new WaitForSeconds(1 * bpm / 60);
+        yield return new WaitForSeconds(0.5f * bpm / 60);
         transform.position = transform.position + new Vector3(0, -1f, 0);
         StartCoroutine(beatMove());
     }

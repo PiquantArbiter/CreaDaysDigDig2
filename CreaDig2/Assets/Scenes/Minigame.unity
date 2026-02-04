@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3e6f595a13dc54eaca7b63e43d07d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 122
+  bpm: 120
   chara: {fileID: 1409008348}
   trail: {fileID: 614414956147869827, guid: 9a56339207e58454b84718404ca7faee, type: 3}
   pos: 0
@@ -1049,7 +1049,7 @@ MonoBehaviour:
   noties: []
   timings: 
   notPos: 0
-  notMax: 12
+  notMax: 16
   poiText: {fileID: 117044788}
 --- !u!4 &1198206302
 Transform:

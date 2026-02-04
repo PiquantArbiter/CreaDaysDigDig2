@@ -97,6 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23aedb9825056e248af2358759ed40e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 122
+  bpm: 120
   player: {fileID: 0}
   cont: {fileID: 0}

@@ -5,10 +5,16 @@ using System.Xml.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.SceneManagement;
 
 public class DialogLog : MonoBehaviour
 {
+    public Image black;
+    public int fadeDuration;
+    public string nextScene;
+
     public TextAsset ThisScenDia;
     public List<snippet> diaRray;
     public int plaInDia;
@@ -84,6 +90,7 @@ public class DialogLog : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.Space) && plaInDia >= max)
         {
             can.SetActive(false);
+            StartCoroutine(fadeInNOut());
         }
     }
 
@@ -333,6 +340,24 @@ public class DialogLog : MonoBehaviour
         }
         
 
+
+    }
+
+    public IEnumerator fadeInNOut()
+    {
+
+        float elapsedTime = 0f;
+        Color color = black.color;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Lerp(0, 1, elapsedTime / fadeDuration); // Fade from transparent to black
+            black.color = color;
+            yield return null;
+        }
+
+        SceneManager.LoadScene(nextScene);
 
     }
 }

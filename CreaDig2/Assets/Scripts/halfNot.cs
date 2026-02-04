@@ -32,13 +32,13 @@ public class halfNot : MonoBehaviour
     }
     public IEnumerator beatDes()
     {
-        yield return new WaitForSeconds(11f * bpm / 60);
-        Destroy(gameObject);
+        yield return new WaitForSeconds(11f * (1f / (bpm / 60f)));
+        //Destroy(gameObject);
     }
 
     public IEnumerator beatMove()
     {
-        yield return new WaitForSeconds(1f * bpm / 60);
+        yield return new WaitForSeconds(1f * (1f / (bpm / 60f)));
         transform.position = transform.position + new Vector3(0, -1f, 0);
         StartCoroutine(beatMove());
     }

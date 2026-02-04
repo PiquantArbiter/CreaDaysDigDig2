@@ -33,6 +33,8 @@ public class DialogLog : MonoBehaviour
     public GameObject conTwo;
     public GameObject conThree;
 
+    public GameObject dark;
+
     public GameObject BalNeu;
     public GameObject BalHap;
     public GameObject BalSad;
@@ -325,6 +327,9 @@ public class DialogLog : MonoBehaviour
                     darlingEmo = Instantiate(BalAng, leftpos);
                 }
             }
+        } else if (diaRray[plaInDia].sprite == "Dark")
+        {
+            darlingEmo = Instantiate(dark, rightpos);
         }
         
 

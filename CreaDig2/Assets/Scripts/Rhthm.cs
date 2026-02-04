@@ -55,13 +55,13 @@ public class Rhthm : MonoBehaviour
             {
                 Instantiate(trail, halfRight);
                 righth = true;
-                StartCoroutine(dec(righth));
+                StartCoroutine(dec(false));
             }
             else
             {
                 Instantiate(trail, halfLeft);
                 lefth = true;
-                StartCoroutine(dec(lefth));
+                StartCoroutine(dec(true));
             }
             
             pos--;
@@ -72,13 +72,13 @@ public class Rhthm : MonoBehaviour
             {
                 Instantiate(trail, halfLeft);
                 lefth = true;
-                StartCoroutine(dec(lefth));
+                StartCoroutine(dec(true));
             }
             else
             {
                 Instantiate(trail, halfRight);
                 righth = true;
-                StartCoroutine(dec(righth));
+                StartCoroutine(dec(false));
             }
             pos++;
         }
@@ -99,7 +99,7 @@ public class Rhthm : MonoBehaviour
 
     public IEnumerator baseNote(string n, int t)
     {
-        yield return new WaitForSeconds(t * bpm / 60);
+        yield return new WaitForSeconds(t * (60 / bpm));
         if (n == "left")
         {
             Instantiate(basnote, left);
@@ -145,9 +145,16 @@ public class Rhthm : MonoBehaviour
         poiText.text = "Points:" + points;
     }
 
-    public IEnumerator dec(bool b)
+    public IEnumerator dec(bool d)
     {
         yield return new WaitForSeconds(1);
-        b = false;
+        if (d)
+        {
+            lefth = false;
+        }
+        else
+        {
+            righth = false;
+        }
     }
 }

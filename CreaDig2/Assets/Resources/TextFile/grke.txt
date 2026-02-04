@@ -1,1 +1,1 @@
-left#1&mid#1&right#1&mid#1&left#1&right#1&mid#1&raght#0&left#1&laft#1&raght#2&laft#1&ml#2&mr#2&mr#2&ml#2
+left#1&mid#1&right#1&mid#1&left#1&right#1&mid#1&raght#0&left#1&laft#1&raght#2&laft#1&ml#2&mr#2&mr#2&ml#2&laft#5&left#0&raght#1&raght#1

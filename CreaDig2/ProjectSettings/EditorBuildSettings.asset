@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: "Assets/Scenes/r\xE4ka.unity"
+    guid: ec82fd765000b284b85e2c2f8c51c0c9
+  - enabled: 1
+    path: Assets/Scenes/katt.unity
+    guid: c3b8328ec1121ad46865a37625b4bda7
+  - enabled: 1
+    path: Assets/Scenes/roblox.unity
+    guid: f477fd817f3781f41ba706cec3a4a039
+  - enabled: 1
+    path: Assets/Scenes/Minigame.unity
+    guid: e43dc857c08c84049ae9d61d0cb3210d
+  - enabled: 1
+    path: Assets/Scenes/end.unity
+    guid: bebe01279d88b7343b633cd5af24d4b7
   m_configObjects: {}

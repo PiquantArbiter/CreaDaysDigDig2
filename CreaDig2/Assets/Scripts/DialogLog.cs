@@ -90,7 +90,7 @@ public class DialogLog : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.Space) && plaInDia >= max)
         {
             can.SetActive(false);
-            StartCoroutine(fadeInNOut());
+            SceneManager.LoadScene(nextScene);
         }
     }
 
@@ -237,19 +237,19 @@ public class DialogLog : MonoBehaviour
             {
                 if (diaRray[plaInDia].emot == "neutral")
                 {
-                    darlingEmo = Instantiate(OneNeu, leftpos);
+                    darlingEmo = Instantiate(OneNeu, rightpos);
                 }
                 else if (diaRray[plaInDia].emot == "happy")
                 {
-                    darlingEmo = Instantiate(OneHap, leftpos);
+                    darlingEmo = Instantiate(OneHap, rightpos);
                 }
                 else if (diaRray[plaInDia].emot == "sad")
                 {
-                    darlingEmo = Instantiate(OneSad, leftpos);
+                    darlingEmo = Instantiate(OneSad, rightpos);
                 }
                 else if (diaRray[plaInDia].emot == "angry")
                 {
-                    darlingEmo = Instantiate(OneAng, leftpos);
+                    darlingEmo = Instantiate(OneAng, rightpos);
                 }
             }
         }
@@ -259,38 +259,38 @@ public class DialogLog : MonoBehaviour
             {
                 if (diaRray[plaInDia].emot == "neutral")
                 {
-                    darlingEmo = Instantiate(BalNeu, leftpos);
+                    darlingEmo = Instantiate(TwoNeu, leftpos);
                 }
                 else if (diaRray[plaInDia].emot == "happy")
                 {
-                    darlingEmo = Instantiate(BalHap, leftpos);
+                    darlingEmo = Instantiate(TwoHap, leftpos);
                 }
                 else if (diaRray[plaInDia].emot == "sad")
                 {
-                    darlingEmo = Instantiate(BalSad, leftpos);
+                    darlingEmo = Instantiate(TwoSad, leftpos);
                 }
                 else if (diaRray[plaInDia].emot == "angry")
                 {
-                    darlingEmo = Instantiate(BalAng, leftpos);
+                    darlingEmo = Instantiate(TwoAng, leftpos);
                 }
             }
             else
             {
                 if (diaRray[plaInDia].emot == "neutral")
                 {
-                    darlingEmo = Instantiate(BalNeu, leftpos);
+                    darlingEmo = Instantiate(TwoNeu, rightpos);
                 }
                 else if (diaRray[plaInDia].emot == "happy")
                 {
-                    darlingEmo = Instantiate(BalHap, leftpos);
+                    darlingEmo = Instantiate(TwoHap, rightpos);
                 }
                 else if (diaRray[plaInDia].emot == "sad")
                 {
-                    darlingEmo = Instantiate(BalSad, leftpos);
+                    darlingEmo = Instantiate(TwoSad, rightpos);
                 }
                 else if (diaRray[plaInDia].emot == "angry")
                 {
-                    darlingEmo = Instantiate(BalAng, leftpos);
+                    darlingEmo = Instantiate(TwoAng, rightpos);
                 }
             }
         }
@@ -300,38 +300,38 @@ public class DialogLog : MonoBehaviour
             {
                 if (diaRray[plaInDia].emot == "neutral")
                 {
-                    darlingEmo = Instantiate(BalNeu, leftpos);
+                    darlingEmo = Instantiate(ThrNeu, leftpos);
                 }
                 else if (diaRray[plaInDia].emot == "happy")
                 {
-                    darlingEmo = Instantiate(BalHap, leftpos);
+                    darlingEmo = Instantiate(ThrHap, leftpos);
                 }
                 else if (diaRray[plaInDia].emot == "sad")
                 {
-                    darlingEmo = Instantiate(BalSad, leftpos);
+                    darlingEmo = Instantiate(ThrSad, leftpos);
                 }
                 else if (diaRray[plaInDia].emot == "angry")
                 {
-                    darlingEmo = Instantiate(BalAng, leftpos);
+                    darlingEmo = Instantiate(ThrAng, leftpos);
                 }
             }
             else
             {
                 if (diaRray[plaInDia].emot == "neutral")
                 {
-                    darlingEmo = Instantiate(BalNeu, leftpos);
+                    darlingEmo = Instantiate(ThrNeu, rightpos);
                 }
                 else if (diaRray[plaInDia].emot == "happy")
                 {
-                    darlingEmo = Instantiate(BalHap, leftpos);
+                    darlingEmo = Instantiate(ThrHap, rightpos);
                 }
                 else if (diaRray[plaInDia].emot == "sad")
                 {
-                    darlingEmo = Instantiate(BalSad, leftpos);
+                    darlingEmo = Instantiate(ThrSad, rightpos);
                 }
                 else if (diaRray[plaInDia].emot == "angry")
                 {
-                    darlingEmo = Instantiate(BalAng, leftpos);
+                    darlingEmo = Instantiate(ThrAng, rightpos);
                 }
             }
         } else if (diaRray[plaInDia].sprite == "Dark")
@@ -343,23 +343,7 @@ public class DialogLog : MonoBehaviour
 
     }
 
-    public IEnumerator fadeInNOut()
-    {
-
-        float elapsedTime = 0f;
-        Color color = black.color;
-
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            color.a = Mathf.Lerp(0, 1, elapsedTime / fadeDuration); // Fade from transparent to black
-            black.color = color;
-            yield return null;
-        }
-
-        SceneManager.LoadScene(nextScene);
-
-    }
+    
 }
 
 

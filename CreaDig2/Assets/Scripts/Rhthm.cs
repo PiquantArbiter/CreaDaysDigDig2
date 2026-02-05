@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Rhthm : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class Rhthm : MonoBehaviour
     {
         receive();
         StartCoroutine(baseNote(noties[notPos], timings[notPos]));
+        StartCoroutine(songEnd());
     }
 
     // Update is called once per frame
@@ -156,5 +158,11 @@ public class Rhthm : MonoBehaviour
         {
             righth = false;
         }
+    }
+
+    public IEnumerator songEnd()
+    {
+        yield return new WaitForSeconds(20);
+        SceneManager.LoadScene("end");
     }
 }

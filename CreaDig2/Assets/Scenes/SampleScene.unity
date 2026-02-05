@@ -867,11 +867,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   black: {fileID: 758906901}
   fadeDuration: 2
-  nextScene: 
+  nextScene: "r\xE4ka"
   ThisScenDia: {fileID: 4900000, guid: 575c479917dc0ee43acd86869e369593, type: 3}
   diaRray: []
   plaInDia: -1
-  max: 13
+  max: 9
   can: {fileID: 588328847}
   t: {fileID: 1391548160}
   n: {fileID: 1005976241}

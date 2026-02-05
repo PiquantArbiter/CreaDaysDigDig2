@@ -11,6 +11,8 @@ using UnityEngine.SceneManagement;
 
 public class DialogLog : MonoBehaviour
 {
+    public bool gra;
+
     public Image black;
     public int fadeDuration;
     public string nextScene;
@@ -130,7 +132,11 @@ public class DialogLog : MonoBehaviour
                 n.color = coeulors[Array.IndexOf(coloeurs, c)];
             }
         }
-        Destroy(darlingEmo);
+        if (gra)
+        {
+            Destroy(darlingEmo);
+        }
+        
         if(diaRray[plaInDia].sprite == "Bal")
         {
             if (diaRray[plaInDia].leftSide)
